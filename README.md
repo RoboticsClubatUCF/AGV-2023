@@ -7,10 +7,10 @@ This repository contains a series of ROS packages used in the operation of an au
 This package requires Ubuntu 20.04 (either as a VM, container, or actual system). Like all ROS1 packages, it's meant to be placed inside a catkin_ws at path /home/$USER/catkin_ws
 
 1. Clone this repo into ~/catkin_ws/src with 
-	<git clone https://github.com/RoboticsClubatUCF/AGV-2023.git>
+	'git clone https://github.com/RoboticsClubatUCF/AGV-2023.git'
 
 2. Run the setup script with 
-	<./setup.sh>
+	'./setup.sh'
 
 
 
