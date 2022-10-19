@@ -4,26 +4,26 @@
     <xacro:property name="robot" value="choo_2"/>
     <!-- physical parameters of robot, all in SI (meters, kg) -->
     <!-- base dimensions -->
-    <xacro:property name="base_mass" value="45.36" />
-    <xacro:property name="base_width" value="0.5588" />     <!-- width=y -->
-    <xacro:property name="base_length" value="0.9398" />    <!-- length=x -->
-    <xacro:property name="base_height" value="0.305" />     <!-- height=z -->
+    <xacro:property name="base_mass" value="27.216" />
+    <xacro:property name="base_width" value="0.78" />     <!-- width=y -->
+    <xacro:property name="base_length" value="0.92" />    <!-- length=x -->
+    <xacro:property name="base_height" value="0.5" />     <!-- height=z -->
     <!-- wheel properties -->
-    <xacro:property name="wheel_radius" value="0.10795" />
-    <xacro:property name="wheel_width" value="0.059" />
+    <xacro:property name="wheel_radius" value="0.1016" />
+    <xacro:property name="wheel_width" value=".0635" />
     <!-- differential properties -->
-    <xacro:property name="wheel_mass" value="1.179" />
-    <xacro:property name="wheelbase" value="0.67" />
-    <xacro:property name="track_width" value="0.67" />
-    <xacro:property name="wheel_offset_x" value="${wheelbase / 2}" />
-    <xacro:property name="wheel_offset_y" value="${track_width / 2}" />
-    <xacro:property name="wheel_offset_z" value="-0.186475" />
+    <xacro:property name="wheel_mass" value="1.179" />      <!--need-->
+    <xacro:property name="wheelbase" value=".0725" />       <!--need-->
+    <xacro:property name="track_width" value=".5445" />      
+    <xacro:property name="wheel_offset_x" value="${wheelbase / 2}" />    <!--length=x-->    
+    <xacro:property name="wheel_offset_y" value="${track_width / 2}" />  <!--width=y-->   
+    <xacro:property name="wheel_offset_z" value="-0.186475" />          <!--height=z-->     <!--need-->
     <!-- lidar stalk properties -->
-    <xacro:property name="lidar_stalk_height" value="0.330" />
+    <xacro:property name="lidar_stalk_height" value="0.430" />
     <xacro:property name="lidar_stalk_side" value="0.020" />
-    <xacro:property name="lidar_stalk_offset_x" value="-0.1311" />
-    <xacro:property name="lidar_stalk_offset_y" value="0.0" />
-    <xacro:property name="lidar_stalk_offset_z" value="${base_height / 2}" />
+    <xacro:property name="lidar_stalk_offset_x" value="-0.1311" />         <!--need-->
+    <xacro:property name="lidar_stalk_offset_y" value="0.0" />              <!--need-->
+    <xacro:property name="lidar_stalk_offset_z" value="${base_height / 2}" />      <!--need-->
     <!-- lidar properties -->
     <xacro:property name="lidar_mass" value="0.830" />
     <xacro:property name="lidar_height" value="0.0717" />
@@ -40,6 +40,12 @@
     <xacro:property name="cam_offset_x" value="${base_length / 2}" />
     <xacro:property name="cam_offset_y" value="0.0" />
     <xacro:property name="cam_offset_z" value="${(base_height / 2) + cam_height}" />
+
+    <!-- caster properties -->
+    <xacro:property name="caster_offset_x" value="0.1756" />
+    <xacro:property name="caster_offset_y" value="0.3857" />
+    <xacro:property name="caster_offset_z" value="${(base_height / 2) + cam_height}" />
+
 
     <!--
         Include other xacro files for simulation plugins, Gazebo references, and macros
@@ -74,8 +80,8 @@
     <xacro:caster_total name="back_left_caster" radius="0.294425" mass="5" />
     <xacro:caster_joint name="back_left_caster" x_offset="${wheel_offset_x}" y_offset="0" z_offset="0" reflect_x="-1" reflect_y="1"/>
     <!-- back right caster -->
-    <!-- <xacro:caster_total name="back_right_caster" radius="${wheel_radius}" mass="${wheel_mass}" />
-    <xacro:caster_joint name="back_right_caster" x_offset="${wheel_offset_x}" y_offset="${wheel_offset_y / 2}" z_offset="${wheel_offset_z}" reflect_x="-1" reflect_y="-1"/> -->
+    <xacro:caster_total name="back_right_caster" radius="${wheel_radius}" mass="${wheel_mass}" />
+    <xacro:caster_joint name="back_right_caster" x_offset="${caster_offset_x}" y_offset="${caster_offset_y}" z_offset="${caster_offset_z}" reflect_x="-1" reflect_y="-1"/> -->
 
     <!-- lidar stalk -->
     <xacro:box_total name="lidar_stalk" mass="0.14982" width="${lidar_stalk_side}" length="${lidar_stalk_side}" height="${lidar_stalk_height}" />
