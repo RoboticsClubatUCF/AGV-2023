@@ -11,7 +11,7 @@ import nav_msgs.msg as nav
 import sensor_msgs.msg as sens
 import geometry_msgs.msg as geom
 import move_base_msgs.msg as move_base
-import ugv_msg.msg as ugv
+import agv_msg.msg as ugv
 
 def main():
 
