@@ -50,8 +50,8 @@
     <!--
         Include other xacro files for simulation plugins, Gazebo references, and macros
     -->
-    <xacro:include filename="$(find ugv_description)/urdf/choo_2/model.gazebo" />
-    <xacro:include filename="$(find ugv_description)/urdf/choo_2/model.macro" />
+    <xacro:include filename="$(find agv_model)/choo_2/model.gazebo" />
+    <xacro:include filename="$(find agv_model)/choo_2/model.macro" />
 
     <!-- 
         objects contained within the gazebo tags are for Gazebo simulation use only, ignored otherwise.
