@@ -6,9 +6,7 @@
     <arg name="robot_desc" default="$(find agv_model)/$(arg robot)/model.urdf.xacro" />
     <arg name="world" default="empty_world"/>
     <arg name="gazebo" default="false" />   <!-- launch the full Gazebo gui window (resource intensive)-->
-    <arg name="slam" default="true" />
     <arg name="debug" default="false" />
-    <arg name="no_costmap_2d" default="false" />
     <arg name="rviz" default="true"/>
     <arg name="rviz_cfg" default="$(find agv_sim)/rviz/config.rviz"/>
 
