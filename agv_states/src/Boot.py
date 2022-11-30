@@ -38,10 +38,10 @@ class Boot(smach.State):
 
         # define all required data streams
         self.streams = [DataStream('RC', ugv.RC, '/choo_2/rc'),
-                        DataStream('ODOM', nav.Odometry, '/zed/zed_node/odom'),
+                        DataStream('ODOM', nav.Odometry, '/choo_2/odom'),
                         DataStream('LIDAR', sens.PointCloud2, '/velodyne_points'),
                         DataStream('IMU', sens.Imu, '/vectornav/IMU'),
-                        DataStream('GPS', sens.NavSatFix, '/fix')]
+                        DataStream('GPS', sens.NavSatFix, '/gps/filtered')]
 
         # create subscriber for each data stream
         for stream in self.streams:

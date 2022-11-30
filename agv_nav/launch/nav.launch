@@ -23,7 +23,7 @@
 
 
     <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform" clear_params="true">
-        <remap from="odometry/filtered" to="odometry/gps" />
+        <remap from="odometry/filtered" to="odometry/filtered/map" />
         <remap from="imu/data" to="vectornav/IMU" />
         <remap from="gps/fix" to="choo_2/fix" />
     </node>

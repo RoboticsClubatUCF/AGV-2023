@@ -3,7 +3,7 @@
     <arg name="bypass_boot" default="true"/>
 
     <!-- Load waypoints to parameter server -->
-    <!-- <rosparam command="load" file="$(find ugv_nav)/config/waypoints.yaml" /> -->
+    <rosparam command="load" file="$(find agv_nav)/config/waypoints.yaml" />
 
     <node name="wl" pkg="agv_states" type="Auto.py" output="screen" />
 

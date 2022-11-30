@@ -11,3 +11,5 @@ bool switch_d   # AUTO
 bool switch_e   # E-STOP
 bool switch_f
 int16 switch_g   # DIAL
+# GPS coordinates 
+int16 waypoints[]

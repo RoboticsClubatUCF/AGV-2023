@@ -58,5 +58,8 @@
     <!-- Launches our nav package -->
     <include file="$(find agv_nav)/launch/nav.launch" />
 
+    <!-- Launches our state machine package -->
+    <include file="$(find agv_states)/launch/states.launch"/>
+
 </launch>
 
